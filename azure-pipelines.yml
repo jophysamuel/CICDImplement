@@ -18,15 +18,13 @@ steps:
 
   #Your build pipeline references an undefined variable named ‘BuildConfiguration’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 
-steps:
 - task: DotNetCoreCLI@2
- displayName: Publish
- inputs:
-   command: publish
-   publishWebProjects: false
-   projects: '**/CICDImplement.csproj'
-   arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+  displayName: Publish
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: '**/CICDImplement.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
    
-steps:
 - task: PublishBuildArtifacts@1
- displayName: 'Publish Artifact: drop'
+    displayName: 'Publish Artifact: drop'
