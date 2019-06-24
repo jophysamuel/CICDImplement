@@ -27,4 +27,4 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
    
 - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop'
+  displayName: 'Publish Artifact: drop'
